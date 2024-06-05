@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #000, #333, #000);
+    background: #000;
     color: #fff;
     line-height: 1.6;
 }
@@ -121,6 +121,17 @@ nav {
     background: #ccc;
 }
 
+.background-image {
+    background: url('path/to/your/image.jpg') no-repeat center center/cover;
+    position: relative;
+    color: #fff;
+}
+
+.background-image .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 60px 20px;
+}
+
 section {
     padding: 60px 20px;
     text-align: center;
@@ -165,12 +176,13 @@ section p, section ul {
 
 .pricing {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .plan {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
