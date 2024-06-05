@@ -122,7 +122,7 @@ nav {
 }
 
 .background-image {
-    background: url('path/to/your/image.jpg') no-repeat center center/cover;
+    background: url('image_background.jpeg') no-repeat center center/cover;
     position: relative;
     color: #fff;
 }
