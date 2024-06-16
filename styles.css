@@ -693,15 +693,15 @@ button[type="submit"]:hover {
         margin: 15px 0;
     }
 
-    .container{
+    .container {
         position: absolute;
-        top: -10%;
+        top: 0;
         left: 0;
-        width: 171%;
-        height: 111vh;
+        width: 172%;
+        height: 100vh;
         overflow: hidden;
         z-index: -1;
-        }
+    }
 
     #container_text {
         width: 80%;
