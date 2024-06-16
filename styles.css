@@ -753,6 +753,10 @@ button[type="submit"]:hover {
         font-size: 0.9em;
     }
 
+    #text_home_p{
+        width: 450px;
+    }
+
     form input, form textarea {
         font-size: 0.9em;
     }
