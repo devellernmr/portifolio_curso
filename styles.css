@@ -695,10 +695,10 @@ button[type="submit"]:hover {
 
     .container {
         position: absolute;
-        top: 0;
+        top: -5%;
         left: 0;
         width: 172%;
-        height: 100vh;
+        height: 106vh;
         overflow: hidden;
         z-index: -1;
     }
