@@ -693,15 +693,15 @@ button[type="submit"]:hover {
         margin: 15px 0;
     }
 
-    .container {
+    .container{
         position: absolute;
-        top: 0;
+        top: -10%;
         left: 0;
-        width: 172%;
-        height: 100vh;
+        width: 171%;
+        height: 111vh;
         overflow: hidden;
         z-index: -1;
-    }
+        }
 
     #container_text {
         width: 80%;
@@ -727,6 +727,16 @@ button[type="submit"]:hover {
 
 /* Smartphones */
 @media screen and (max-width: 480px) {
+    .container{
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 171%;
+    height: 111vh;
+    overflow: hidden;
+    z-index: -1;
+    }
+
     .header-content h1 {
         font-size: 2em;
     }
