@@ -1,87 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Front End - FrontEndMastery</title>
+    <title>Imagem em Tela Cheia</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo">ASD</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#precos">Preços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+        <nav class="navbar">
+            <div class="logo"><a href="#ASD" id="logo">ASD</a></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
+            <ul class="nav-links">
+                <li><a href="#container_text" id="nav_link_home" class="linha">HOME</a></li>
+                <li><a href="#container_aboult" id="nav_link_aboult" class="linha">ABOULT</a></li>
+                <li><a href="#container_price_id" id="nav_link_price" class="linha">PRICE</a></li>
+                <li><a href="#container_contact" >CONTACT</a></li>
+            </ul>
         </nav>
+        <div class="container">
+            <img src="img_background.png" alt="Imagem de fundo">
+            <div id="container_gradient_back">
+            </div>
+        </div>
+
+        <section>
+            <div id="container_text">
+                <div class="style_text_vsd">
+                    <h1 class="text_home_ttl">DESVENDE O </h1><h1 class="text_home_ttl" id="text_home_ttl_2">FRONT-END</h1>
+                </div>
+                <div>
+                    <h2 id="text_home_h2">SEU PRIMEIRO PASSO <br> NO DESENVOLVIMENTO <br> WEB"</h2>
+                </div>
+                <div>
+                    <p id="text_home_p">
+                        Descubra o universo do desenvolvimento web com nosso curso 'Iniciando no Front-end' – o primeiro passo para transformar sua paixão por tecnologia em uma carreira de sucesso!
+                    </p>
+                </div>
+            </div>
+        </section>
     </header>
 
-    <section id="inicio" class="hero background-animate-1">
-        <h1>Bem-vindo ao Curso de Front End</h1>
-        <p>Aprenda a criar páginas web incríveis e responsivas!</p>
-        <a href="#sobre" class="btn">Saiba Mais</a>
-    </section>
-
-    <section id="sobre" class="background-image">
-        <div class="overlay">
-            <h2>Sobre o Curso</h2>
-            <p>Nosso curso de front-end é projetado para ensinar tudo o que você precisa para criar sites modernos e responsivos.</p>
-        </div>
-    </section>
-
-    <section id="precos">
-        <h2>Planos e Preços</h2>
-        <div class="pricing">
-            <div class="plan">
-                <h3>Básico</h3>
-                <p>$49,99</p>
-                <p>Conteúdo Completo</p>
-                <p>Acesso por 6 Meses</p>
-                <a href="#" class="btn">Comprar</a>
+    <main>
+        <section>
+            <div id="container_aboult">
+                <div class="container_text_aboult">
+                    <h1 class="ctn_text">APRENDIZADO PRÁTICO</h1>
+                    <p class="prg_text">Ganhe experiência real com projetos e exercícios aplicáveis, reforçando suas habilidades e confiança na construção de sites..</p>
+                </div>
+                <div class="container_text_aboult">
+                    <h1 class="ctn_text">FUNDAMENTOS ESSENCIAIS</h1>
+                    <p class="prg_text">Domine HTML, CSS e JavaScript, construindo uma base sólida para criar interfaces de usuário atraentes e funcionais.</p>
+                </div>
+                <div class="container_text_aboult">
+                    <h1 class="ctn_text">FERRAMENTAS E TECNOLOGIAS MODERNAS
+                    </h1>
+                    <p class="prg_text">Aprenda as ferramentas e tecnologias mais recentes, mantendo-se atualizado com as tendências do desenvolvimento Front-end.</p>
+                </div>
             </div>
-            <div class="plan">
-                <h3>Premium</h3>
-                <p>$89,99</p>
-                <p>Conteúdo Completo</p>
-                <p>Acesso por 12 Meses</p>
-                <p>Suporte Prioritário</p>
-                <a href="#" class="btn">Comprar</a>
+        </section>
+
+        <section>
+            <div class="container_price" id="container_price_id">
+                <div id="img_price">
+                    
+                    <img id="img_price_solo" src="image_price.png" alt="image_price">
+                    <div id="container_gradient_back_price"></div>
+                    </div>
+                </div>
+                <div id="text_price">
+                    <div class="style_text_vsd">
+                        <h1 id="text_price_h1_ttl">DOMINE O FRONT-END E INICIE SUA CARREIRA <span id="epmt_h1_ttl">COM SUCESSO!</span></h1>
+                    </div>
+                    <div>
+                        <p id="text_price_p">Este é o primeiro passo para se tornar um desenvolvedor web de sucesso e criar interfaces de usuário atraentes e funcionais. Por apenas R$25, você pode iniciar essa jornada emocionante no mundo do desenvolvimento web.</p>
+                    </div>
+                    <div>
+                        <button id="button_price">
+                            <a href="https://pay.kiwify.com.br/6agH4hx" id="link_buttoin_price">COMPRE JÁ!!!</a>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section id="contato">
-        <h2>Contato</h2>
-        <form>
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome">
-            
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-            
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem"></textarea>
-            
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 FrontEndMastery. Todos os direitos reservados.</p>
-        <div class="social">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">LinkedIn</a>
-        </div>
-    </footer>
+        </section>
+        <section id="contact">
+            <div id="container_contact">
+                <form action="https://formspree.io/f/mjvnnjre" method="post" id="form_contact">
+                    <div>
+                        <h1 id="text_contact_ttl" class="style_text_vsd">CONTATO</h1>
+                        <p id="text_contact_p">Se você tiver qualquer dúvida, problema ou sugestão, sinta-se à vontade para nos contatar através do formulário abaixo. Estamos aqui para ajudar e responder o mais rápido possível!</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="name" class="contact_input" name="name" required>
+                        <label for="name" class="input-label">Nome:</label>
+                    </div>
+    
+                    <div class="form-group">
+                        <input type="email" id="email" class="contact_input" name="email" required>
+                        <label for="email" class="input-label">E-mail:</label>
+                    </div>
+    
+                    <div class="form-group">
+                        <input type="text" id="subject" class="contact_input" name="subject" required>
+                        <label for="subject" class="input-label">Assunto:</label>
+                    </div>
+    
+                    <div class="form-group">
+                        <textarea id="message" class="contact_input" name="message" rows="4" required></textarea>
+                        <label for="message" class="input-label">Mensagem:</label>
+                    </div>
+                
+                    <button type="submit">ENVIAR</button>
+            </form>   
+            </div>     
+        </section>
+    </main> 
     <script src="script.js"></script>
 </body>
 </html>
