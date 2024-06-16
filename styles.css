@@ -670,8 +670,9 @@ button[type="submit"]:hover {
     }
 
     .navbar{
-        width: 113%;
+        width: 118%;
         padding: 20px 40px;
+        position: relative;
     }
     .nav-links {
         flex-direction: column;
@@ -706,6 +707,24 @@ button[type="submit"]:hover {
     #container_text {
         width: 80%;
     }
+
+    #text_home_p{
+        width: 100%;
+    }
+
+
+    #container_aboult{
+        display: block;
+        width: 118%;
+        height: 600px;
+        border-top: solid 2px white;
+    }
+
+    .container_text_aboult{
+        height: 33.5%;
+    }
+
+
 
 
     .menu-toggle {
