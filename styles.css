@@ -43,7 +43,7 @@ body, html {
 }
 
 header {
-    display: flex;
+    display: flex !important; /* Use com cautela */    
     align-items: center;
     height: 100vh; /* altura total da viewport */
 }
@@ -63,12 +63,21 @@ header {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0)); /* Ajuste as cores e a opacidade conforme necessário */
 }
 
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+/* Esconda os links em dispositivos móveis */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+    }
 }
 
+/* Estilo do ícone do hambúrguer */
+.menu-icon {
+    font-size: 1.5em; /* Ajuste o tamanho conforme necessário */
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+/* Estilo dos links da barra de navegação */
 .navbar .nav-links a {
     text-decoration: none;
     color: white;
@@ -81,9 +90,9 @@ header {
 .linha {
     position: relative;
     text-decoration: none;
-}
-
-.linha::after {
+    }
+    
+    .linha::after {
     content: '';
     position: absolute;
     background-color: #d7d7d7;
@@ -92,22 +101,22 @@ header {
     left: 0;
     bottom: -10px;
     transition: 0.3s;
-}
-
-.linha:hover::after {
+    }
+    
+    .linha:hover::after {
     background-color: #f7f6f6;
     width: 100%;
-}
-
-#logo {
+    }
+    
+    #logo {
     text-decoration: none;
     color: white;
     font-size: 1.3em;
     padding: 0 15px;
     position: relative;
-}
-
-#logo::before {
+    }
+    
+    #logo::before {
     content: '';
     position: absolute;
     top: 0;
@@ -116,11 +125,12 @@ header {
     height: 100%;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s ease;
-}
-
-#logo:hover::before {
+    }
+    
+    #logo:hover::before {
     border-color: #f7f6f6;
-}
+    }
+
 
 /* Container */
 .container {
@@ -616,23 +626,105 @@ button[type="submit"]:hover {
     }
 }
 
+/* Estilos para dispositivos móveis navbar*/
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Oculta o menu de navegação */
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: block; /* Mostra o ícone do menu hamburguer */
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+/* Estilos padrão */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    z-index: 1000; /* Mantém a barra de navegação acima de outros elementos */
+    font-family: "Nunito", sans-serif;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0)); /* Ajuste as cores e a opacidade conforme necessário */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-icon {
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/*dispositivos móveis*/
+
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
+    .menu-icon{
+        display: flex;
+    }
+
+    #menu-toggle{
+        display: flex;
+    }
+    .navbar { 
+        flex-direction:column;
         align-items: flex-start;
-        padding: 10px 20px;
+        padding: 10px 1vh;
+        width: 90%;
     }
 
     .navbar .nav-links {
         flex-direction: column;
-        align-items: flex-start;
         gap: 10px;
         margin-top: 10px;
+        margin-left: 4vh;
+        background: #1a1a1a;
+    }
+
+    .nav-links li{
+        margin-right: 0;
+    }
+
+    li{
+        border-bottom: solid 2px white;
     }
 
     .navbar .nav-links a {
         font-size: 0.9em;
-        padding: 0 10px;
+
+        border: none;
     }
 
     .style_text_vsd {

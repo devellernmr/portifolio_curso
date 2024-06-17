@@ -11,12 +11,14 @@
     <header>
         <nav class="navbar">
             <div class="logo"><a href="#ASD" id="logo">ASD</a></div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+
+            <!-- Adicione este botão no seu HTML -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776; <!-- Ícone do hambúrguer -->
             </div>
-            <ul class="nav-links">
+
+
+            <ul class="nav-links" id="home">
                 <li><a href="#container_text" id="nav_link_home" class="linha">HOME</a></li>
                 <li><a href="#container_aboult" id="nav_link_aboult" class="linha">ABOULT</a></li>
                 <li><a href="#container_price_id" id="nav_link_price" class="linha">PRICE</a></li>
@@ -24,7 +26,7 @@
             </ul>
         </nav>
         <div class="container">
-            <img src="img_background.png" alt="Imagem de fundo">
+            <img src="img_background.png" alt="Imagem de fundo" id="home">
             <div id="container_gradient_back">
             </div>
         </div>

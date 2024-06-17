@@ -41,3 +41,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// Adicione esta função JavaScript no seu arquivo ou no cabeçalho do seu HTML
+function toggleMenu() {
+    var menu = document.querySelector('.nav-links');
+    if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "flex"; // Mostra o menu
+    } else {
+        menu.style.display = "none"; // Esconde o menu
+    }
+}
+
+// Adicione um evento de clique para cada item do menu
+document.querySelectorAll('.nav-links a').forEach(item => {
+    item.addEventListener('click', () => {
+        // Fecha o menu hamburguer após redirecionar o usuário
+        toggleMenu();
+    });
+});
+
