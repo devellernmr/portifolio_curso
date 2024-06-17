@@ -1,90 +1,54 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Kanit:wght@100..900&family=Nunito:wght@200..1000&family=Rubik+Mono+One&display=swap');
 
 /* Estilização da barra de rolagem para navegadores WebKit (Chrome, Safari, Opera) */
-
-/* Barras verticais */
 ::-webkit-scrollbar {
     width: 8px; /* largura da barra de rolagem */
     background-color: #1a1a1a; /* cor de fundo */
 }
 
-/* Alça (thumb) da barra de rolagem */
 ::-webkit-scrollbar-thumb {
     background-color: #757575; /* cor da alça */
     border-radius: 10px; /* borda arredondada */
 }
 
-/* Alça ao passar o mouse */
 ::-webkit-scrollbar-thumb:hover {
     background-color: #999; /* cor da alça ao passar o mouse */
 }
 
-/* Trilha (track) da barra de rolagem */
 ::-webkit-scrollbar-track {
     background-color: #333; /* cor da trilha */
 }
 
-/* Trilha ao passar o mouse */
 ::-webkit-scrollbar-track:hover {
     background-color: #444; /* cor da trilha ao passar o mouse */
 }
 
-/* Cantos da trilha */
 ::-webkit-scrollbar-corner {
     background-color: transparent; /* cor dos cantos */
 }
 
-/* Estilização da barra de rolagem para navegadores Firefox */
-/* Nota: o Firefox tem limitações na personalização da barra de rolagem com CSS */
-
-/* Barras verticais */
-/* Nota: os estilos para Firefox variam e podem não ser completamente personalizáveis */
-html {
-    scrollbar-color: #757575 #1a1a1a; /* cor da alça e fundo da barra de rolagem */
-    scrollbar-width: thin; /* largura da barra de rolagem */
-}
-
-/* Alça (thumb) da barra de rolagem */
-/* A personalização da alça pode ser limitada no Firefox */
-/* Por exemplo: não é possível definir borda-arredondada diretamente */
-
-/* Trilha (track) da barra de rolagem */
-/* A personalização da trilha pode ser limitada no Firefox */
-
-/* Cantos da trilha */
-/* A personalização dos cantos pode ser limitada no Firefox */
-
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth
-}
-
-html {
-    scroll-behavior: smooth
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 100%;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    scrollbar-color: #757575 #1a1a1a; /* cor da alça e fundo da barra de rolagem */
+    scrollbar-width: thin; /* largura da barra de rolagem */
 }
 
 header {
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh; /* altura total da viewport */
 }
 
-    /*Nav bar*/
-
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -99,18 +63,10 @@ header {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0)); /* Ajuste as cores e a opacidade conforme necessário */
 }
 
-ul {
-    padding: 0;
-}
-
-.navbar .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
 .navbar .nav-links {
     list-style: none;
     display: flex;
+    gap: 15px;
 }
 
 .navbar .nav-links a {
@@ -118,21 +74,20 @@ ul {
     color: white;
     font-size: 1em;
     border-right: solid 2px white;
-    padding: 0 15px 0 ;
+    padding: 0 15px;
     transition: border-color 0.3s ease;
 }
 
 .linha {
     position: relative;
     text-decoration: none;
-
 }
 
 .linha::after {
     content: '';
     position: absolute;
     background-color: #d7d7d7;
-    height: 3px;
+    height: 2px;
     width: 0;
     left: 0;
     bottom: -10px;
@@ -141,17 +96,14 @@ ul {
 
 .linha:hover::after {
     background-color: #f7f6f6;
+    width: 100%;
 }
-
-
-
 
 #logo {
     text-decoration: none;
     color: white;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
-    padding: 0 15px 0 ;
+    font-size: 1.3em;
+    padding: 0 15px;
     position: relative;
 }
 
@@ -165,29 +117,20 @@ ul {
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s ease;
 }
+
 #logo:hover::before {
     border-color: #f7f6f6;
 }
 
-
+/* Container */
 .container {
-    position: absolute; /* Use fixed para garantir que cubra a viewport */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* 100% da altura da viewport */
-    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites */
-    z-index: -1; /* Garante que o contêiner fique atrás da barra de navegação */
-}
-
-.container::before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 1; /* Certifique-se de que o gradiente fique acima da imagem */
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
 }
 
 .container img {
@@ -206,13 +149,11 @@ ul {
     z-index: 1; /* Certifique-se de que o gradiente fique acima da imagem */
 }
 
-    /*Text home*/
-
+/* Text home */
 #container_text {
-    display: block;
-    width: 80%; /* largura do container */
-    width: 1200px; /* largura máxima do container */
-    height: 500px;
+    width: 80%;
+    max-width: 1200px; /* largura máxima do container */
+    height: auto;
     margin: 0 auto; /* centraliza o container horizontalmente */
     padding: 20px;
     background-color: #ffffff01;
@@ -229,9 +170,7 @@ ul {
 .text_home_ttl {
     color: transparent;
     font-family: "Kanit", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 60px;
+    font-size: 3.75rem;
     font-weight: bolder;
     height: 80px;
     padding: 20px 0 0 0;
@@ -239,7 +178,7 @@ ul {
 
 #text_home_ttl_2 {
     border-bottom: solid 3px white;
-    width: 580px;
+    width: 100%;
     padding: 0px 0px;
 }
 
@@ -258,56 +197,59 @@ ul {
     font-weight: 200;
     font-size: 18px;
     text-align: justify;
-    width: 575px;
+    width: 100%;
 }
 
-
-    /* Aboult section*/
-
+/* About section */
 #container_aboult {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: black;
     width: 100%;
-    height: 600px;
+    height: auto;
+    padding: 40px 20px;
 }
 
 .container_text_aboult {
-    display: flex;
-    justify-content: space-around; /* Espaçamento uniforme entre itens */
-    align-items: center; /* Alinhamento vertical */
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
     background-color: #0C0C0C;
-    margin: 100px 60px;
+    margin: 20px 0;
     box-shadow: 20px 30px 4px rgb(47, 47, 47);
-    display: block;
-    transition: width 0.3s ease, height 0.3s ease; /* Transição para o tamanho do contêiner */
+    transition: width 0.3s ease, height 0.3s ease;
     border-bottom: solid 2px #ccc;
     border-right: solid 2px #ccc;
+}
+
+.container_text_aboult:hover {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background-color: #d7d7d7;
+    color: #0C0C0C;
+}
+
+.container_text_aboult:hover .prg_text, .container_text_aboult:hover .ctn_text {
+    color: #0C0C0C;
 }
 
 .ctn_text {
     color: transparent;
     font-family: "Kanit", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
     font-weight: bolder;
-    justify-content: center;
     text-align: left;
     margin: 46px 46px 15px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #d7d7d7;
     font-size: 1.5em;
-    display: inline-block; /* Necessário para que a transformação funcione corretamente */
-    transform: scaleX(1.2); /* Aumenta a largura em 20% */
+    transform: scaleX(1.2);
 }
 
 .prg_text {
     color: white;
     font-family: "Kanit", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
     font-weight: 300;
     font-size: 19px;
     text-align: justify;
@@ -315,75 +257,93 @@ ul {
     border-bottom: solid 2px #ccc;
 }
 
-.container_text_aboult:hover {
-    width: 400px; /* Novo tamanho do contêiner quando hover */
-    height: 400px; /* Novo tamanho do contêiner quando hover */
-    color: #0C0C0C;
-    background-color: #d7d7d7;
-}
-
-.container_text_aboult:hover .prg_text {
-    font-size: 20px; /* Novo tamanho da fonte quando hover */
-    color: #0C0C0C;
-    border-bottom: solid 2px #0C0C0C;
-}
-
-.container_text_aboult:hover .ctn_text {
-    font-size: 25px; /* Novo tamanho da fonte quando hover */
-    color: #0C0C0C;
-}
-
+/* Price section */
 .container_price {
     background-color: black;
-    position: absolute; /* Use fixed para garantir que cubra a viewport */
+    position: relative;
     width: 100%;
-    height: 100vh; /* 100% da altura da viewport */
-    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites */
-    z-index: 0;
+    height: 100vh;
+    overflow: hidden;
     border-top: solid 2px white;
     border-bottom: solid 2px white;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.container_price::before{
+.container_price::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1), rgba(0, 0, 0,1), rgba(0, 0, 0,1)); /* Ajuste as cores e a opacidade conforme necessário */
-    z-index: 1; /* Certifique-se de que o gradiente fique acima da imagem */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)); /* Ajuste as cores e a opacidade conforme necessário */
+    z-index: 1;
 }
 
 #img_price {
-    position: absolute; /* Use fixed para garantir que cubra a viewport */
-    width: 100%;
-    height: 100vh; /* 100% da altura da viewport */
-    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites */
-}
-
-#img_price_solo {
     position: absolute;
-    width: 60%;
-    height: 100vh;
-    object-fit: cover; /* Mantém a proporção da imagem enquanto cobre a área */
-    border-bottom: solid 4px white;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    border-bottom: solid 2px white;
 }
 
-#text_price {
-    
-    width: 80%; /* largura do container */
-    width: 592px; /* largura máxima do container */
-    height: 745px;
-    margin: 0 60%; /* centraliza o container horizontalmente */
+#container_price_text {
+    width: 80%;
+    max-width: 800px; /* largura máxima do container */
+    height: auto;
+    z-index: 2;
     padding: 20px;
-    background-color: transparent;
+    background-color: #ffffff00;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-left: solid 4px white;
-    border-top: solid 4px white;
-    z-index: 1;
+    text-align: center;
 }
+
+.style_price {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffffff;
+    font-size: 3em;
+    color: #fffdd9;
+}
+
+.text_price_ttl {
+    color: transparent;
+    font-family: "Kanit", sans-serif;
+    font-size: 3.75rem;
+    font-weight: bolder;
+    height: 80px;
+    padding: 20px 0 0 0;
+}
+
+#text_price_ttl_2 {
+    border-bottom: solid 3px white;
+    width: 100%;
+    padding: 0px 0px;
+}
+
+#text_price_h2 {
+    color: #fff;
+    font-family: "Kanit", sans-serif;
+    font-size: 25px;
+    transform: scaleX(1.3);
+    display: inline-block;
+    padding: 25px 0px 0px 35px;
+}
+
+#text_price_p {
+    color: white;
+    font-family: "kanit", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    text-align: justify;
+    width: 100%;
+}
+
 
 #text_price_h1_ttl {
     position: relative;
@@ -643,155 +603,138 @@ button[type="submit"]:hover {
 
 
 
+/* Media Queries */
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
 
-.menu-toggle .bar {
-    width: 29px;
-    height: 5px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: 0.4s;
-}
-
-/* Media Queries para responsividade */
-
-/* Tablets e dispositivos menores */
-@media screen and (max-width: 768px) {
-    header{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* altura total da viewport */
-    }
-
-    .navbar{
-        position: absolute;
-        width: 100%;
-        padding: 13px 39px;
-    }
-    .nav-links {
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: -100%;
-        background-color: #333;
-        transition: 0.3s;
-        z-index: 2;
-    }
-
-    .nav-links.active {
-        left: 20px;
-    }
-
-    .nav-links li {
-        text-align: center;
-        margin: 15px 0;
-    }
-
-    .container {
-        position: absolute;
-        top: -5%;
-        left: 0;
-        width: 172%;
-        height: 106vh;
-        overflow: hidden;
-        z-index: -1;
-    }
-
-    .container img{
-        width: 71%;
-    }
+/* Estilos para telas médias */
+@media (min-width: 1023px) {
 
     #container_text {
-        width: 80%;
-    }
-
-    #text_home_p{
-        width: 100%;
-    }
-
-
-    #container_aboult{
-        display: block;
-        width: 118%;
-        height: 600px;
-        border-top: solid 2px white;
-    }
-
-    .container_text_aboult{
-        width: 100%;
-        height: 33.5%;
-        margin: 0 auto;
-    }
-
-    .prg_text{
-        width: 70%;
-    }
-
-
-
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .menu-toggle.toggle .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .menu-toggle.toggle .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.toggle .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
+        width: 50%;
+        margin: 10vh;
+        padding: 20px;
     }
 }
 
-/* Smartphones */
-@media screen and (max-width: 480px) {
-    .container{
-    position: absolute;
-    top: -10%;
-    left: 0;
-    width: 171%;
-    height: 111vh;
-    overflow: hidden;
-    z-index: -1;
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
     }
 
-    .header-content h1 {
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 0.9em;
+        padding: 0 10px;
+    }
+
+    .style_text_vsd {
         font-size: 2em;
     }
 
-    .header-content p {
-        font-size: 0.9em;
+    .text_home_ttl {
+        font-size: 2.5rem;
     }
 
-    .section-title {
-        font-size: 1.8em;
+    #text_home_h2 {
+        font-size: 20px;
     }
 
-    .section-content {
-        font-size: 0.9em;
+    #text_home_p {
+        font-size: 16px;
     }
 
-    #text_home_p{
-        width: 450px;
+    .container_text_aboult {
+        max-width: 100%;
     }
 
-    form input, form textarea {
-        font-size: 0.9em;
+    .container_text_aboult:hover {
+        max-width: 100%;
     }
 
-    form button {
-        font-size: 0.9em;
-        padding: 8px;
+    .ctn_text {
+        font-size: 1.2em;
+    }
+
+    .prg_text {
+        font-size: 17px;
+    }
+
+    .container_price {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .style_price {
+        font-size: 2em;
+    }
+
+    .text_price_ttl {
+        font-size: 2.5rem;
+    }
+
+    #text_price_h2 {
+        font-size: 20px;
+    }
+
+    #text_price_p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 0.8em;
+    }
+
+    .style_text_vsd {
+        font-size: 1.5em;
+    }
+
+    .text_home_ttl {
+        font-size: 2rem;
+    }
+
+    #text_home_h2 {
+        font-size: 18px;
+    }
+
+    #text_home_p {
+        font-size: 14px;
+    }
+
+    .ctn_text {
+        font-size: 1em;
+    }
+
+    .prg_text {
+        font-size: 15px;
+    }
+
+    .style_price {
+        font-size: 1.5em;
+    }
+
+    .text_price_ttl {
+        font-size: 2rem;
+    }
+
+    #text_price_h2 {
+        font-size: 18px;
+    }
+
+    #text_price_p {
+        font-size: 14px;
     }
 }
