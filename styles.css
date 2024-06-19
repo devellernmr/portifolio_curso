@@ -213,30 +213,33 @@ header {
 /* About section */
 #container_aboult {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     background-color: black;
     width: 100%;
     height: auto;
     padding: 40px 20px;
+    border-bottom: solid 4px white;
 }
 
 .container_text_aboult {
-    width: 30vw;
+    width: 100%;
+    max-width: 350px;
     height: auto;
     background-color: #0C0C0C;
-    margin: 20px 2.8vw;
-    box-shadow: 15px 15px 4px rgb(47, 47, 47);
+    margin: 20px 0;
+    box-shadow: 20px 30px 4px rgb(47, 47, 47);
     transition: width 0.3s ease, height 0.3s ease;
     border-bottom: solid 2px #ccc;
     border-right: solid 2px #ccc;
 }
 
 .container_text_aboult:hover {
-    width: 60vw;
-    height: 20vw;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     background-color: #d7d7d7;
     color: #0C0C0C;
-    font-size: 2vw;
 }
 
 .container_text_aboult:hover .prg_text, .container_text_aboult:hover .ctn_text {
@@ -248,11 +251,11 @@ header {
     font-family: "Kanit", sans-serif;
     font-weight: bolder;
     text-align: left;
-    margin: 46px 4.5vw 15px;
+    margin: 46px 46px 15px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #d7d7d7;
-    font-size: 1.8vw;
-    transform: scaleX(1.1);
+    font-size: 1.5em;
+    transform: scaleX(1.2);
 }
 
 .prg_text {
@@ -263,215 +266,109 @@ header {
     text-align: justify;
     margin: 20px 26px;
     border-bottom: solid 2px #ccc;
-    padding: 0 0 10px 0;
 }
 
 /* Price section */
-.container_price {
-    background-color: black;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    border-top: solid 2px white;
-    border-bottom: solid 2px white;
+.container_price{
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: #000;
+    position: relative; /* Importante para posicionamento absoluto dentro */
 }
 
-.container_price::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+.container_price_img{
+    width: 60vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#img_price{
+    position: absolute; /* Use fixed para garantir que cubra a viewport */
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)); /* Ajuste as cores e a opacidade conforme necessário */
+    height: 100vh; /* 100% da altura da viewport */
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1), rgba(0, 0, 0,1), rgba(0, 0, 0,1)); /* Ajuste as cores e a opacidade conforme necessário */
+    z-index: 0; /* Certifique-se de que o gradiente fique acima da imagem */
+}
+
+#img_price_solo{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#container_price_text{
+    width: 40vw;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-left: solid 2px white;
     z-index: 1;
 }
 
-#img_price {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    border-bottom: solid 2px white;
-}
-
-#container_price_text {
-    width: 80%;
-    max-width: 800px; /* largura máxima do container */
-    height: auto;
-    z-index: 2;
-    padding: 20px;
-    background-color: #ffffff00;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-left: solid 4px white;
-    text-align: center;
-}
-
-.style_price {
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #ffffff;
-    font-size: 3em;
-    color: #fffdd9;
-}
-
-.text_price_ttl {
-    color: transparent;
-    font-family: "Kanit", sans-serif;
-    font-size: 3.75rem;
-    font-weight: bolder;
-    height: 80px;
-    padding: 20px 0 0 0;
-}
-
-#text_price_ttl_2 {
-    border-bottom: solid 3px white;
-    width: 100%;
-    padding: 0px 0px;
-}
-
-#text_price_h2 {
-    color: #fff;
-    font-family: "Kanit", sans-serif;
-    font-size: 25px;
-    transform: scaleX(1.3);
-    display: inline-block;
-    padding: 25px 0px 0px 35px;
-}
-
-#text_price_p {
-    color: white;
-    font-family: "kanit", sans-serif;
-    font-weight: 200;
-    font-size: 18px;
-    text-align: justify;
-    width: 100%;
-}
-
-
-#text_price_h1_ttl {
+#ttl_price_h1 {
     position: relative;
     color: transparent;
     font-family: "Kanit", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-size: 43px;
+    font-size: 0.8em; /* Ajustando o tamanho da fonte para ser relativo */
     font-weight: bolder;
-    width: 548px;
-    height: 270px;
-    line-height: 1.1; /* altura da linha ajustada */
-    margin: 30px 20px 0px;
-    padding: 70px 80px 20px 0px;
+    line-height: 1.1; /* Altura da linha ajustada */
     text-align: justify;
-    
+    margin: 5.5vw 4.5vh;
+    width: 82%;
+    padding: 10px; /* Adicionando padding para espaço interno */
+    letter-spacing: 0px; /* Define o espaçamento entre letras */
+    -webkit-text-stroke-width: 1px;
 }
 
-#epmt_h1_ttl {
-    letter-spacing: 7px; /* Define o espaçamento entre letras */
-}
-
-#text_price_h1_ttl::before{
+#ttl_price_h1::before {
     content: "";
     position: absolute;
-    top: 50px; /* Distância da borda superior */
+    top: -8%; /* Distância da borda superior em porcentagem */
     left: 0;
     right: 0;
-    height: 10px;
+    width: 36vw;
+    height: 2px; /* Altura da linha */
     border-top: 3px solid rgb(255, 255, 255);
-    z-index: 1;
+    z-index: 2;
 }
 
-#text_price_h1_ttl::after{
+#ttl_price_h1::after {
+    overflow: hidden;
     content: "";
-    position: absolute;
-    top: 0;
-    right: 40px; /* Distância da borda esquerda */
+    position: absolute; /* Adicionando a posição */
+    top: -6vh;
+    right: -3%; /* Distância da borda direita em porcentagem */
     bottom: 0;
-    width: 10px;
+    height: 75vh;
+    width: 2px; /* Largura da linha */
     border-right: 3px solid rgb(255, 255, 255);
+    z-index: 2;
 }
 
-#text_price_p {
-    position: absolute;
-    color: white;
-    margin: 0px 20px 20px;
-    color: white;
-    font-family: "kanit", sans-serif;
-    font-weight: 200;
-    font-size: 20px;
-    text-align: justify;
-    width: 508px;
-    height: 200px;
-    border-right: solid 3px white;
-    padding-right: 40px;
-}
 
-#button_price{
-    background-color: #0C0C0C;
-    position: absolute;
-    border:  solid 3px white;
-    width: 30vw;
-    height: 10vh;
-    margin: 270px 100px;
-    font-size: 2.5vw;
-    font-weight: 900;
-    animation: scale 2s ease-in-out infinite;
-    text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff;
-transition: all 0.3s ease;
-}
-
-#link_button_price{
-    text-decoration: none;
-}
-
-a   {
-    text-decoration: none; /* Remove a linha embaixo do link */
-    color: white;
-    text-shadow:
-        0 0 3px #fff,
-        0 0 4px #fff;
-    transition: all 0.3s ease;
-    animation: breathing 2s ease-in-out infinite;
-}
-
-#button_price:hover {
-    background-color: #ccc;
-    animation: breathing 1.5s ease-in-out infinite;
-    color: #0C0C0C;
-}
-
-#button_price:hover a{
-    color: #0C0C0C;
-    transform: scale(1.1);
-    text-shadow:
-        0 0 10px #000,
-        0 0 20px #000;
-    transition: all 0.3s ease;
-}
-
-@keyframes breathing {
-    0%, 100% {
-        transform: scale(1);
-        text-shadow:
-            0 0 2px #fff,
-            0 0 4px #fff;
+@media (max-width: 480px) {
+    #ttl_price_h1 {
+        font-size: 1.2em; /* Reduzindo ainda mais o tamanho da fonte */
+        margin: 3vw 2vh; /* Ajustando as margens */
     }
-    50% {
-        transform: scale(1.1);
-        text-shadow:
-            0 0 4px #fff,
-            0 0 8px #fff;
+
+    #ttl_price_h1::before {
+        top: 20%; /* Ajustando a posição da linha superior */
+    }
+
+    #ttl_price_h1::after {
+        right: 10%; /* Ajustando a posição da linha direita */
     }
 }
 
 
+/* Contact section*/
 #contact {
     display: flex;
     justify-content: center;
@@ -610,6 +507,32 @@ button[type="submit"]:hover {
         margin: 10vh;
         padding: 20px;
     }
+
+    .container_price_img{
+        width: 50vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    #img_price{
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.89), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1), rgba(0, 0, 0,1), rgba(0, 0, 0,1)); /* Ajuste as cores e a opacidade conforme necessário */
+    }
+
+    #ttl_price_h1 {
+        font-size: 0.6em; /* Reduzindo o tamanho da fonte em telas menores */
+        margin: 5vw 4vh; /* Ajustando as margens */
+    }
+
+    #ttl_price_h1::before {
+        width: 38vw;
+    }
+
+    #ttl_price_h1::after {
+        top: -4vh;
+        right: -8%; /* Ajustando a posição da linha direita */
+        height: 70vh;
+    }
+
 }
 
 /* Estilos para dispositivos móveis navbar*/
@@ -688,13 +611,14 @@ button[type="submit"]:hover {
         flex-direction:column;
         align-items: flex-start;
         padding: 10px 1vh;
-        width: 100%;
+        width: 90%;
     }
 
     .navbar .nav-links {
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
+        margin-left: 4vh;
         background: #1a1a1a;
     }
 
@@ -728,46 +652,16 @@ button[type="submit"]:hover {
         font-size: 16px;
     }
 
-    /* About section */
-    #container_aboult {
-        display: flex;
-        flex-direction: column;
-        background-color: black;
-        width: 100%;
-        height: auto;
-        padding: 40px 20px;
-    }
-
     .container_text_aboult {
-        width: 80vw;
-        height: auto;
-        background-color: #0C0C0C;
-        margin: 0 auto;
-        margin-bottom: 3vh;
-        box-shadow: 15px 15px 4px rgb(47, 47, 47);
-        transition: width 0.3s ease, height 0.3s ease;
-        border-bottom: solid 2px #ccc;
-        border-right: solid 2px #ccc;
+        max-width: 100%;
     }
 
     .container_text_aboult:hover {
-        width: 85vw;
-        height: 25vh;
-        background-color: #d7d7d7;
-        color: #0C0C0C;
-        font-size: 2vw;
+        max-width: 100%;
     }
 
     .ctn_text {
         font-size: 1.2em;
-        color: transparent;
-        font-family: "Kanit", sans-serif;
-        font-weight: bolder;
-        text-align: left;
-        margin: 46px 8.5vw 15px;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #d7d7d7;
-        transform: scaleX(1.1);
     }
 
     .prg_text {
@@ -775,54 +669,61 @@ button[type="submit"]:hover {
     }
 
     .container_price {
-        height: auto;
-        padding: 20px 0;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
     }
 
-    .style_price {
-        font-size: 2em;
+    .container_price_img {
+        width: 100%;
+        height: 100vh;
     }
 
-    .text_price_ttl {
-        font-size: 2.5rem;
-    }
-
-    #text_price_h2 {
-        font-size: 20px;
-    }
-
-    #text_price_p {
-        font-size: 16px;
-        width: 100vw;
-        margin: 0;
-    }
-}
-
-
-
-@media (max-width: 570px) {
-    .container img {
+    #container_price_text {
+        width: 80%;
+        height: 50vh;
         position: absolute;
-        width: 100vw;
-        height: 100%;
-        object-fit: cover; /* Mantém a proporção da imagem enquanto cobre a área */
-        border-bottom: solid 4px white;
-    }
-
-    #text_price_p {
-        width: 100vw;
         margin: 0 auto;
+        z-index: 2; /* Certifique-se de que o texto fique acima da imagem e do gradiente */
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.2); /* Fundo semitransparente para melhor legibilidade */
     }
 
-    #text_price_h1_ttl{
-        width: 100vw;
-        padding: 0;
-        margin: 0;
+    #img_price{
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.9), rgba(0, 0, 0,1)); /* Ajuste as cores e a opacidade conforme necessário */
+    }
+
+    #ttl_price_h1 {
+        color: white;
+        font-size: 1.2em; /* Ajuste conforme necessário */
+        padding: 10px;
+        z-index: 3; /* Certifique-se de que o texto fique acima de tudo */
+    }
+
+    #ttl_price_h1 {
+        font-size: 1.2em; /* Reduzindo o tamanho da fonte em telas menores */
+        margin: 4vw 3vh; /* Ajustando as margens */
+    }
+
+    #ttl_price_h1::before {
+        display: none;
+    }
+
+    #ttl_price_h1::after {
+        display: none;
+    }
+
+    #text_price_p{
+        color: white;
+        font-family: "Kanit", sans-serif;
+        font-size: 10px;
+        text-align: justify;
     }
 }
-
-
-
 
 @media (max-width: 480px) {
     .navbar {
@@ -872,16 +773,4 @@ button[type="submit"]:hover {
     #text_price_p {
         font-size: 14px;
     }
-
-    #text_price_p {
-        width: 100vw;
-        margin: 0 auto;
-    }
-
-    #button_price {
-        width: 100vw;
-        margin: 0;
-        animation: scale 2s ease-in-out infinite;
-    }
-
 }
