@@ -661,7 +661,7 @@ button[type="submit"]:hover {
         display: flex;
         flex-direction: column;
         background-color: black;
-        width: 90vh;
+        width: 100%;
         height: auto;
         padding: 4vh 0;
         border-bottom: solid 4px white;
