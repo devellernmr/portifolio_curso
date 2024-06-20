@@ -213,25 +213,27 @@ header {
 /* About section */
 #container_aboult {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     background-color: black;
     width: 100%;
     height: auto;
-    padding: 40px 20px;
+    padding: 4vh 2vw;
     border-bottom: solid 4px white;
+    
 }
 
 .container_text_aboult {
-    width: 100%;
+    width: 28vw;
     max-width: 350px;
     height: auto;
     background-color: #0C0C0C;
-    margin: 20px 0;
-    box-shadow: 20px 30px 4px rgb(47, 47, 47);
+    margin: 0 auto;
+    box-shadow: 1.5vw 1.5vw 6px rgb(47, 47, 47);
     transition: width 0.3s ease, height 0.3s ease;
     border-bottom: solid 2px #ccc;
     border-right: solid 2px #ccc;
+    position: relative;
+    overflow: hidden; /* Corta o texto que ultrapassar o contêiner */
 }
 
 .container_text_aboult:hover {
@@ -247,15 +249,18 @@ header {
 }
 
 .ctn_text {
+    display: flex;
+    margin: 25px 46px 15px;
     color: transparent;
     font-family: "Kanit", sans-serif;
     font-weight: bolder;
     text-align: left;
-    margin: 46px 46px 15px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #d7d7d7;
-    font-size: 1.5em;
+    font-size: 2vw;
     transform: scaleX(1.2);
+    box-sizing: border-box; /* Inclui padding e border no cálculo de largura e altura */
+    word-wrap: break-word; /* Quebra a palavra para caber dentro do contêiner */
 }
 
 .prg_text {
@@ -652,8 +657,29 @@ button[type="submit"]:hover {
         font-size: 16px;
     }
 
+    #container_aboult {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        width: 90vh;
+        height: auto;
+        padding: 4vh 0;
+        border-bottom: solid 4px white;
+        
+    }
+
     .container_text_aboult {
-        max-width: 100%;
+        width: 100vw;
+        max-width: 90vw;
+        height: 18vh;
+        background-color: #0C0C0C;
+        margin: 0 auto;
+        box-shadow: 1.5vw 1.5vw 6px rgb(47, 47, 47);
+        transition: width 0.3s ease, height 0.3s ease;
+        border-bottom: solid 2px #ccc;
+        border-right: solid 2px #ccc;
+        position: relative;
+        overflow: hidden; /* Corta o texto que ultrapassar o contêiner */
     }
 
     .container_text_aboult:hover {
@@ -662,6 +688,7 @@ button[type="submit"]:hover {
 
     .ctn_text {
         font-size: 1.2em;
+        margin: 25px 11vw 15px;
     }
 
     .prg_text {
