@@ -437,7 +437,7 @@ header {
 #text_contact_ttl {
     display: flex;
     color: transparent;
-    font-size: 50px;
+    font-size: 3em;
     font-family: "kanit", sans-serif;
     border-bottom: solid 3px white;
     justify-content: center;
@@ -605,9 +605,9 @@ button[type="submit"]:hover {
     .menu-icon {
         display: block; /* Mostra o ícone do menu hamburguer */
         position: fixed;
-        top: 15px;
+        top: 0.8vh;
         right: 15px;
-        font-size: 24px;
+        font-size: 40px;
         cursor: pointer;
     }
 }
@@ -659,6 +659,11 @@ button[type="submit"]:hover {
     #menu-toggle{
         display: flex;
     }
+
+    #logo {
+        font-size: 2.2em;
+        }
+
     .navbar { 
         flex-direction:column;
         align-items: flex-start;
@@ -797,10 +802,13 @@ button[type="submit"]:hover {
     }
 
     #ttl_price_h1 {
-        color: white;
+        color: transparent;
         font-size: 1.2em; /* Ajuste conforme necessário */
         padding: 10px;
         z-index: 3; /* Certifique-se de que o texto fique acima de tudo */
+        letter-spacing: 2px; /* Define o espaçamento entre letras */
+        -webkit-text-stroke-width: 1px;
+        width: 70vw;
     }
 
     #ttl_price_h1 {
@@ -834,6 +842,10 @@ button[type="submit"]:hover {
         color: white;
         font-size: 2.1em;
         font-weight: bold;
+    }
+
+    #container_contact{
+        width: 100%;
     }
 }
 
