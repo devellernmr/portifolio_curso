@@ -280,6 +280,7 @@ header {
     display: flex;
     background-color: #000;
     position: relative; /* Importante para posicionamento absoluto dentro */
+    overflow: hidden;
 }
 
 .container_price_img{
@@ -304,7 +305,7 @@ header {
 }
 
 #container_price_text{
-    width: 40vw;
+    width: 31vw;
     margin: 0 auto;
     text-align: center;
     justify-content: center;
@@ -320,24 +321,24 @@ header {
     font-family: "Kanit", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-size: 0.8em; /* Ajustando o tamanho da fonte para ser relativo */
+    font-size: 3.5vw; /* Ajustando o tamanho da fonte para ser relativo */
     font-weight: bolder;
     line-height: 1.1; /* Altura da linha ajustada */
     text-align: justify;
     margin: 5.5vw 4.5vh;
-    width: 82%;
+    width: 100%;
     padding: 10px; /* Adicionando padding para espaço interno */
-    letter-spacing: 0px; /* Define o espaçamento entre letras */
-    -webkit-text-stroke-width: 1px;
+    letter-spacing: -3px; /* Define o espaçamento entre letras */
+    -webkit-text-stroke-width: 3px;
 }
 
 #ttl_price_h1::before {
     content: "";
     position: absolute;
-    top: -8%; /* Distância da borda superior em porcentagem */
+    top: -12%; /* Distância da borda superior em porcentagem */
     left: 0;
     right: 0;
-    width: 36vw;
+    width: 38vw;
     height: 2px; /* Altura da linha */
     border-top: 3px solid rgb(255, 255, 255);
     z-index: 2;
@@ -348,28 +349,54 @@ header {
     content: "";
     position: absolute; /* Adicionando a posição */
     top: -6vh;
-    right: -3%; /* Distância da borda direita em porcentagem */
+    right: -1%; /* Distância da borda direita em porcentagem */
     bottom: 0;
-    height: 75vh;
+    height: 70vh;
     width: 2px; /* Largura da linha */
     border-right: 3px solid rgb(255, 255, 255);
     z-index: 2;
 }
 
+#text_price_p{
+    color: rgb(236, 236, 236);
+    font-family: "Kanit", sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    font-weight: lighter;
+    text-align: justify;
+    width: 32vw;
+    margin: 3vw 5vh;
+}
 
-@media (max-width: 480px) {
-    #ttl_price_h1 {
-        font-size: 1.2em; /* Reduzindo ainda mais o tamanho da fonte */
-        margin: 3vw 2vh; /* Ajustando as margens */
-    }
+#text_price_button{
+    width: 32vw;
+    height: 8vh;
+    margin: 4vh 3vw 0;
+    background-color: transparent;
+    border: white solid 2px;
+    color: white;
+    font-size: 2.1em;
+    font-weight: bold;
+}
 
-    #ttl_price_h1::before {
-        top: 20%; /* Ajustando a posição da linha superior */
-    }
+#link_buttoin_price{
+    text-decoration: none;
+    color: white;
+}
 
-    #ttl_price_h1::after {
-        right: 10%; /* Ajustando a posição da linha direita */
-    }
+#link_buttoin_price:hover{
+    color: black;
+}
+
+#text_price_button:hover {
+    background-color: #afaaaa;
+    color: #000;
+    width: 33vw;
+    height: 10vh;
+    transition: ease 0.7s;
+    margin: 2.5vh 2.6vw 0;
+    font-size: 2.2;
+    font-weight: bolder;
 }
 
 
@@ -524,21 +551,41 @@ button[type="submit"]:hover {
     }
 
     #ttl_price_h1 {
-        font-size: 0.6em; /* Reduzindo o tamanho da fonte em telas menores */
-        margin: 5vw 4vh; /* Ajustando as margens */
+        font-size: 0.em; /* Reduzindo o tamanho da fonte em telas menores */
+        margin: 5vw 4vh 1vw; /* Ajustando as margens */
+        width: 34vw;
     }
 
     #ttl_price_h1::before {
-        width: 38vw;
+        width: 45vw;
     }
 
     #ttl_price_h1::after {
-        top: -4vh;
-        right: -8%; /* Ajustando a posição da linha direita */
-        height: 70vh;
+        top: -10vh;
+        right: -2%; /* Ajustando a posição da linha direita */
+        height: 90vh;
     }
 
 }
+
+@media (max-width: 1023px)  {
+    #container_price_text{
+        width: 45vw;
+    }
+
+    #ttl_price_h1 {
+        font-size: 0.em; /* Reduzindo o tamanho da fonte em telas menores */
+        margin: 5vw 4vh 1vw; /* Ajustando as margens */
+        width: 35vw;
+    }
+
+    #ttl_price_h1::after {
+        top: -10vh;
+        right: -3%; /* Ajustando a posição da linha direita */
+        height: 90vh;
+    }
+}
+
 
 /* Estilos para dispositivos móveis navbar*/
 @media screen and (max-width: 768px) {
@@ -724,6 +771,31 @@ button[type="submit"]:hover {
         rgba(0, 0, 0, 0.9), rgba(0, 0, 0,1)); /* Ajuste as cores e a opacidade conforme necessário */
     }
 
+    #ttl_price_h1::before {
+        content: "";
+        position: absolute;
+        top: -8%; /* Distância da borda superior em porcentagem */
+        left: 0;
+        right: 0;
+        width: 35vw;
+        height: 2px; /* Altura da linha */
+        border-top: 3px solid rgb(255, 255, 255);
+        z-index: 2;
+    }
+    
+    #ttl_price_h1::after {
+        overflow: hidden;
+        content: "";
+        position: absolute; /* Adicionando a posição */
+        top: -6vh;
+        right: -3%; /* Distância da borda direita em porcentagem */
+        bottom: 0;
+        height: 70vh;
+        width: 2px; /* Largura da linha */
+        border-right: 3px solid rgb(255, 255, 255);
+        z-index: 2;
+    }
+
     #ttl_price_h1 {
         color: white;
         font-size: 1.2em; /* Ajuste conforme necessário */
@@ -747,8 +819,21 @@ button[type="submit"]:hover {
     #text_price_p{
         color: white;
         font-family: "Kanit", sans-serif;
-        font-size: 10px;
+        font-size: 1.2em;
         text-align: justify;
+        width: 70vw;
+        margin: 0 auto;
+    }
+
+    #text_price_button{
+        width: 60vw;
+        height: 8vh;
+        margin: 4vh 3vw 0;
+        background-color: transparent;
+        border: white solid 2px;
+        color: white;
+        font-size: 2.1em;
+        font-weight: bold;
     }
 }
 
@@ -798,6 +883,22 @@ button[type="submit"]:hover {
     }
 
     #text_price_p {
-        font-size: 14px;
+        font-size: 1.2em;
+    text-align: justify;
+    width: 70vw;
+    margin: 0 auto;
+    }
+
+    #ttl_price_h1 {
+        font-size: 1.2em; /* Reduzindo ainda mais o tamanho da fonte */
+        margin: 3vw 2vh; /* Ajustando as margens */
+    }
+
+    #ttl_price_h1::before {
+        top: 20%; /* Ajustando a posição da linha superior */
+    }
+
+    #ttl_price_h1::after {
+        right: 10%; /* Ajustando a posição da linha direita */
     }
 }
